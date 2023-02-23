@@ -2,18 +2,18 @@ import logo from '../assets/logo.svg';
 
 const Header = () => {
     return (
-      <header>
+      <header data-testid="header-container">
           <div className="logo">
               <img src={logo} alt="Logo" />
-              <span>Task List</span>
+              <span data-testid="title">Task List</span>
           </div>
           <div className="themeSelector">
-              <span className="light"></span>
-              <span className="medium"></span>
-              <span className="dark activeTheme"></span>
-              <span className="gOne"></span>
-              <span className="gTwo"></span>
-              <span className="gThree"></span>
+              <span className="light" data-testid="theme-selector"></span>
+              <span className="medium" data-testid="theme-selector"></span>
+              <span className="dark activeTheme" data-testid="theme-selector"></span>
+              <span className="gOne" data-testid="theme-selector"></span>
+              <span className="gTwo" data-testid="theme-selector"></span>
+              <span className="gThree" data-testid="theme-selector"></span>
           </div>
       </header>
     );
