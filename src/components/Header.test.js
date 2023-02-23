@@ -5,8 +5,8 @@ describe('Header component', () => {
 
   test('will render the main wrapper', () => {
     render(<Header />);
-    const headerContainer = screen.getByTestId('header-container');
-    expect(headerContainer).toBeInTheDocument();
+    const wrapper = screen.getByTestId('component-wrapper');
+    expect(wrapper).toBeInTheDocument();
   });
 
   test('will render logo', () => {

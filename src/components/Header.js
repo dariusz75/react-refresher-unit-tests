@@ -2,7 +2,7 @@ import logo from '../assets/logo.svg';
 
 const Header = () => {
     return (
-      <header data-testid="header-container">
+      <header data-testid="component-wrapper">
           <div className="logo">
               <img src={logo} alt="Logo" />
               <span data-testid="title">Task List</span>

@@ -1,7 +1,7 @@
 const AddTask = () => {
   return (
-    <section className="addTask" >
-      <form >
+    <section className="addTask" data-testid="component-wrapper">
+      <form name="add-task" >
         <input
           type="text"
           name="task"
