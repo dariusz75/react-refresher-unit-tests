@@ -6,17 +6,17 @@ const ShowTask = () => {
 ]
 
   return (
-    <section className="showTask">
+    <section className="showTask" data-testid="component-wrapper">
       <div className="head">
         <div>
           <span className="title">Todo</span>
-          <span className="count">{tasks.length}</span>
+          <span className="count" data-testid="counter">{tasks.length}</span>
         </div>
         <button className="clearAll">Clear All</button>
       </div>
       <ul>
         { tasks.map((task) => (
-          <li>
+          <li data-testid="task">
             <p>
               <span className="name">{task.name}</span>
               <span className="time">{task.time}</span>
