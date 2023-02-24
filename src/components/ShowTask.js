@@ -4,11 +4,14 @@ const ShowTask = ({tasklist, setTasklist, task, setTask}) => {
     setTasklist([]);
   };
 
-  const editTask = (task) => {
+  const editTask = (id) => {
+    const selectedTask = tasklist.find((task) => id === task.id);
+    setTask(selectedTask);
+    
   };
 
   const deleteTask = (id) => {
-    const tasksToReplace = tasklist.filter((task) => 
+    const tasksToReplace = tasklist.filter(task => 
       id !== task.id );
       setTasklist(tasksToReplace);
   };
@@ -37,7 +40,7 @@ const ShowTask = ({tasklist, setTasklist, task, setTask}) => {
             </p>
             <i 
               className="bi bi-pencil-square"
-              onClick={() => editTask(task)}
+              onClick={() => editTask(task.id)}
             ></i>
             <i
               className="bi bi-trash"
