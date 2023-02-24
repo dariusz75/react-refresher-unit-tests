@@ -21,7 +21,12 @@ const ShowTask = ({tasklist, setTasklist, task, setTask}) => {
           <span className="title">Todo</span>
           <span className="count" data-testid="counter">{tasklist.length}</span>
         </div>
-        <button className={`clearAll ${!tasklist.length && ' disabled'}`} onClick={clearAll} >Clear All</button>
+        <button
+          className={`clearAll ${!tasklist.length && ' disabled'}`} 
+          onClick={clearAll}
+        >
+          Clear All
+        </button>
       </div>
       <ul>
         { tasklist.map((task) => (
