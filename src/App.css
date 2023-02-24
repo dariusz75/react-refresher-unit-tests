@@ -137,6 +137,11 @@ header .themeSelector .activeTheme{
   background-color: #1061db;
 }
 
+.showTask .clearAll.disabled {
+  background-color: #7baaf0;
+  cursor: not-allowed;
+}
+
 .showTask ul{
   margin: 30px 5px 20px 5px;
   display: flex;

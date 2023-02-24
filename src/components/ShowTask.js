@@ -1,28 +1,43 @@
-const ShowTask = () => {
-  const tasks = [
-    {id: 10001, name: "TASK A", time: "2:09:01 AM 9/14/2030"},
-    {id: 10002, name: "TASK B", time: "2:09:01 AM 9/14/2030"},
-    {id: 10003, name: "TASK C", time: "2:09:01 AM 9/14/2030"},
-]
+const ShowTask = ({tasklist, setTasklist, task, setTask}) => {
+
+  const clearAll = () => {
+    setTasklist([]);
+  };
+
+  const editTask = (task) => {
+  };
+
+  const deleteTask = (id) => {
+    const tasksToReplace = tasklist.filter((task) => 
+      id !== task.id );
+      setTasklist(tasksToReplace);
+  };
+  
 
   return (
     <section className="showTask" data-testid="component-wrapper">
       <div className="head">
         <div>
           <span className="title">Todo</span>
-          <span className="count" data-testid="counter">{tasks.length}</span>
+          <span className="count" data-testid="counter">{tasklist.length}</span>
         </div>
-        <button className="clearAll">Clear All</button>
+        <button className={`clearAll ${!tasklist.length && ' disabled'}`} onClick={clearAll} >Clear All</button>
       </div>
       <ul>
-        { tasks.map((task) => (
-          <li data-testid="task">
+        { tasklist.map((task) => (
+          <li key={task.id} data-testid="task">
             <p>
               <span className="name">{task.name}</span>
               <span className="time">{task.time}</span>
             </p>
-            <i className="bi bi-pencil-square"></i>
-            <i className="bi bi-trash"></i>
+            <i 
+              className="bi bi-pencil-square"
+              onClick={() => editTask(task)}
+            ></i>
+            <i
+              className="bi bi-trash"
+              onClick={() => deleteTask(task.id)}
+            ></i>
           </li>
           )) 
         }            
