@@ -27,7 +27,7 @@ describe('Header component', () => {
     render(<Header />);
     const selectors = screen.getAllByTestId('theme-selector');
     
-    expect(selectors).toHaveLength(6);
+    expect(selectors).toHaveLength(3);
   })
 
 })
