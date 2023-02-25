@@ -20,6 +20,7 @@ const AddTask = ({ tasklist, setTasklist, task, setTask }) => {
         }
       });
       setTasklist(updatedTasklist);
+      setTask({});
     } else {
       const date = new Date();
       const newTask = {
@@ -28,7 +29,7 @@ const AddTask = ({ tasklist, setTasklist, task, setTask }) => {
         time: `${date.toLocaleTimeString()} ${date.toLocaleDateString()}`
       };
       setTasklist([...tasklist, newTask]);
-      e.target.task.value = '';
+      setTask({});
     };
 
     
@@ -44,7 +45,7 @@ const AddTask = ({ tasklist, setTasklist, task, setTask }) => {
           autoComplete="off"
           placeholder="add task"
           maxLength="25"
-          value={task.name}
+          value={task.name || ''}
           onChange={(e) => setTask({...task, name: e.target.value})}
         />
         <button type="submit">Add</button>
