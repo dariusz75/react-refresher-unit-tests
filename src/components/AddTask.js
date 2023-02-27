@@ -3,6 +3,8 @@ const AddTask = ({ tasklist, setTasklist, task, setTask }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    //console.log('event', e.target.task.value)
+
     if(task.id) {
       const date = new Date();
       const updatedTasklist = tasklist.map((t) => {
@@ -25,9 +27,10 @@ const AddTask = ({ tasklist, setTasklist, task, setTask }) => {
       const date = new Date();
       const newTask = {
         id: date.getTime(),
-        name: e.target.task.value,
+        name: task.name,
         time: `${date.toLocaleTimeString()} ${date.toLocaleDateString()}`
       };
+      console.log('task is', tasklist);
       setTasklist([...tasklist, newTask]);
       setTask({});
     };
@@ -40,6 +43,7 @@ const AddTask = ({ tasklist, setTasklist, task, setTask }) => {
     <section className="addTask" data-testid="component-wrapper">
       <form name="add-task" onSubmit={handleSubmit}>
         <input
+          data-testid="input"
           type="text"
           name="task"
           autoComplete="off"
