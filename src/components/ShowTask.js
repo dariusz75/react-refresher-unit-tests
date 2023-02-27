@@ -35,8 +35,8 @@ const ShowTask = ({tasklist, setTasklist, task, setTask}) => {
         { tasklist.map((task) => (
           <li key={task.id} data-testid="task">
             <p>
-              <span className="name">{task.name}</span>
-              <span className="time">{task.time}</span>
+              <span className="name" data-testid="task-name">{task.name}</span>
+              <span className="time" data-testid="task-time">{task.time}</span>
             </p>
             <i 
               className="bi bi-pencil-square"

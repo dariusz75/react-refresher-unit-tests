@@ -1,4 +1,4 @@
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, screen, fireEvent, getByTestId } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import App from './App';
 
@@ -10,13 +10,15 @@ describe('App component', () => {
     expect(appWrapper).toBeInTheDocument();
   });
 
-  test.only('will add task', async () => {
+  test('will add task', async () => {
     render(<App />);
     const addButton = screen.getByRole('button', {name: 'Add'});
     const input = screen.getByTestId('input');
 
     await userEvent.type(input, 'test task');
-   await userEvent.click(addButton);
+    await userEvent.click(addButton);
+
+    expect(screen.getByTestId('task-name').textContent).toBe('test task');
 
     screen.debug(undefined, 30000)
   });
