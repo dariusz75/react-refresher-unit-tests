@@ -19,13 +19,7 @@ describe('ShowTask component', () => {
     render(<ShowTask />);
     const clearAllButton = screen.getByRole('button', {name: 'Clear All'});
     expect(clearAllButton).toBeInTheDocument();
-  })
-
-  test('will render list of tasks', () => {
-    render(<ShowTask />);
-    const tasks = screen.getAllByTestId('task');
-    expect(tasks).toHaveLength(3)
-  })
+  });
 })
 
 

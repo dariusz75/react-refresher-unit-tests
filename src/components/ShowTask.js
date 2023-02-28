@@ -16,7 +16,6 @@ const ShowTask = ({tasklist, setTasklist, task, setTask}) => {
       setTasklist(tasksToReplace);
   };
   
-
   return (
     <section className="showTask" data-testid="component-wrapper">
       <div className="head">
@@ -39,10 +38,12 @@ const ShowTask = ({tasklist, setTasklist, task, setTask}) => {
               <span className="time" data-testid="task-time">{task.time}</span>
             </p>
             <i 
+              data-testid="edit-task"
               className="bi bi-pencil-square"
               onClick={() => editTask(task.id)}
             ></i>
             <i
+              data-testid="remove-task"
               className="bi bi-trash"
               onClick={() => deleteTask(task.id)}
             ></i>
